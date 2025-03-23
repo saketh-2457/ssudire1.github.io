@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <h1>Star Pattern</h1>
+    </head>
+    <body>
+        <label for="Input number">Enter a Positive Number:</label>
+        <input type="number" id="Input number" min="0">
+        <div id="demo_div"></div>
+
+        <script>
+            document.getElementById("Input number").addEventListener("input", function() {
+                let n = parseInt(this.value);
+                let text = "";
+
+                for(let i = 0; i <= n; i++){
+                    for(let j = 0; j < i; j++){
+                        text += "* "
+                    }
+                         text += "<br>";
+                }
+                document.getElementById("demo_div").innerHTML = text;
+            });
+        </script>
+    </body>
+</html>
