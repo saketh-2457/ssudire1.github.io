@@ -21,6 +21,8 @@ const works = {
 const navButtonsDiv = document.getElementById("nav_buttons");
 const contentFrame = document.getElementById("content_frame");
 
+
+
 for (let key in works) {
     let projectLink = document.createElement("div");
     projectLink.innerText = works[key].title;
