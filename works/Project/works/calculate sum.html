@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>    
+</head>
+<body>
+    <input id="input_a" placeholder="Enter A"/>
+    <input id="input_b" placeholder="Enter B"/>
+
+    <button onclick="calculate()">Calculate sum</button>
+    <p>Sum: <span id="output_span"></span></p>
+
+    <script>
+        const colors = ["red", "green", "blue", "orange"];
+        let idx = 0;
+
+        function calculate() {
+            let a = parseInt(document.getElementById("input_a").value) || 0;
+            let b = parseInt(document.getElementById("input_b").value) || 0;
+
+            let sum = 0;
+            let count = 0;
+
+            do {
+                if (count == 0) sum += a;
+                else sum += b;
+                count++;
+            } while (count < 2);
+
+            // Update UI with the sum
+            document.getElementById("output_span").innerHTML = sum;
+            document.getElementById("output_span").style.color = colors[idx];
+
+            // Cycle through colors
+            idx = (idx + 1) % colors.length;
+        }
+    </script>
+</body>
+</html>
