@@ -17,10 +17,6 @@ document.addEventListener("DOMContentLoaded", () => {
         { title: "Project 15", url: "works/student.html" },
         { title: "Project 16", url: "works/info.html" },
         { title: "Project 17", url: "works/midterm.html" },
-
-
-
-
     ];
 
     const navButtonsDiv = document.getElementById("nav_buttons");
