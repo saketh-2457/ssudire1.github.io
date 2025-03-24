@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Layout</title>
+    <style>
+        /* Basic CSS for layout */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Header Styles */
+        .header {
+            background-color: #f0f0f0;
+            padding: 20px;
+            text-align: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 100; /* Ensure it stays on top */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header-buttons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .header button {
+            padding: 8px 12px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .header button.round-border {
+            border-radius: 20px;
+        }
+
+        /* Main Content Styles */
+        .main-content {
+            padding: 20px;
+            margin-top: 80px; /* Height of the header */
+        }
+
+        .contact-section {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .ad-space {
+            width: 200px;
+            height: 300px;
+            border: 1px solid #ccc;
+            margin: 10px;
+            text-align: center;
+            line-height: 300px;
+        }
+
+        .ad-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .contact-form {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .contact-form input[type="email"],
+        .contact-form textarea {
+            width: 50%;
+            padding: 10px;
+            margin: 10px 0;
+        }
+        /* Hidden Section Styles */
+        .hidden-section {
+            background-color: #e0e0e0;
+            padding: 20px;
+            text-align: center;
+            display: none; /* Hidden by default */
+        }
+
+        /* Footer Styles */
+        .footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            display: none; /* Hidden by default */
+        }
+
+        .footer-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .footer button {
+            padding: 8px 12px;
+            border: none;
+            background-color: #555;
+            color: white;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header class="header">
+        <div>
+            <span>Logo</span>
+            <span>Company Name</span>
+        </div>
+        <div class="header-buttons">
+            <button>Text Button No border</button>
+            <button>Text Button No border</button>
+            <button>Text Button No border</button>
+            <button class="round-border">Text Button Round border</button>
+            <button class="round-border">Text Button Round border</button>
+        </div>
+    </header>
+
+    <!-- Main Content Section -->
+    <div class="main-content">
+        <section class="contact-section">
+            <h1>Large Title</h1>
+            <p>Contact Us section</p>
+        </section>
+
+        <div class="ad-container">
+            <div class="ad-space">Space/box for image/ad</div>
+            <div class="ad-space">Space/box for image/ad</div>
+        </div>
+
+        <section class="contact-form">
+            <input type="email" placeholder="Input for user email">
+            <textarea placeholder="Long text input for message"></textarea>
+            <button>Button to Send Message</button>
+        </section>
+    </div>
+
+    <!-- Another Body Section (Hidden) -->
+    <section class="hidden-section">
+        <h2>Another Body Section</h2>
+        <p>This section should only appear once scrolled down.</p>
+    </section>
+
+    <!-- Footer Section (Hidden) -->
+    <footer class="footer">
+        <div class="footer-buttons">
+            <button>Text Button No border</button>
+            <button>Text Button No border</button>
+            <button>Text Button No border</button>
+            <button>Text Button No border</button>
+        </div>
+    </footer>
+
+    <script>
+        // JavaScript to handle the display of hidden sections
+        window.addEventListener('scroll', function() {
+            // Show hidden-section after scrolling a bit
+            const hiddenSection = document.querySelector('.hidden-section');
+            if (window.scrollY > 300) { // Adjust the scroll distance as needed
+                hiddenSection.style.display = 'block';
+            }
+
+            // Show footer when the user reaches the bottom
+            const footer = document.querySelector('.footer');
+            if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+                footer.style.display = 'block';
+            }
+        });
+    </script>
+
+</body>
+</html>

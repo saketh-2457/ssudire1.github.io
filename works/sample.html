@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+    }
+
+    body {
+        background: #2a2929;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px;
+        border: 2px solid black;
+        position: fixed;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 90%;
+        background: white;
+        z-index: 1000;
+    }
+
+    .logo-box {
+        display: flex;
+        align-items: center;
+        border: 2px solid black;
+        padding: 5px 10px;
+    }
+
+    .logo {
+        width: 50px;
+        height: 30px;
+        background: lightgray;
+        text-align: center;
+        line-height: 30px;
+        font-size: 14px;
+        margin-right: 10px;
+    }
+
+    .nav-buttons {
+        display: flex;
+        gap: 10px;
+    }
+
+    .button {
+        padding: 8px 14px;
+        font-size: 14px;
+        background: none;
+        cursor: pointer;
+        border: 2px solid black;
+    }
+
+    .button.round {
+        border-radius: 20px;
+        background-color: antiquewhite;
+    }
+
+    .body-content {
+        margin-top: 120px; 
+        padding: 20px;
+        border: 2px solid black;
+        width: 90%;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        background: lightblue;
+    }
+
+    .left-section {
+        width: 40%;
+        padding: 10px;
+    }
+
+    .title-box {
+        border: 2px solid black;
+        padding: 10px;
+        margin-bottom: 10px;
+        font-size: 18px;
+        font-weight: bold;
+    }
+
+    .subtitle {
+        font-size: 16px;
+        font-weight: normal;
+    }
+
+    .description-box {
+        border: 2px solid black;
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    .image-box {
+        width: 55%;
+        border: 2px solid black;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 200px;
+        text-align: center;
+        font-size: 14px;
+        padding: 10px;
+        background: rgba(216, 205, 205, 0.635);
+    }
+
+    .button-group {
+        margin-top: 10px;
+        display: flex;
+        gap: 10px;
+    }
+
+    .footer {
+        width: 90%;
+        background: lightgray;
+        border: 2px solid black;
+        padding: 10px;
+        text-align: center;
+        margin-top: 20px;
+        display: none;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .footer.visible {
+        display: flex;
+    }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <div class="logo-box">
+            <div class="logo">SR</div>
+            <span>SR Communications</span>
+        </div>
+        <div class="nav-buttons">
+            <button class="button">About</button>
+            <button class="button">Contact Us</button>
+            <button class="button">Careers</button>
+            <button class="button round">Text Button</button>
+            <button class="button round">Text Button</button>
+        </div>
+    </div>
+
+    <div class="body-content">
+        <div class="left-section">
+            <div class="title-box">
+                Welcome to SR Communications <br>
+                <span class="subtitle">Innovating Connectivity</span>
+            </div>
+            <div class="description-box">
+                At SR Communications, we are committed to delivering advanced solutions that enhance business connectivity and drive success.
+            </div>
+            <div class="button-group">
+                <button class="button round">Learn More</button>
+                <button class="button round">Get in Touch</button>
+            </div>
+        </div>
+
+        <div class="image-box">
+            Place Images
+        </div>
+    </div>
+
+    <div class="footer">
+        <button class="button">About</button>
+        <button class="button">Contact Us</button>
+        <button class="button">Help</button>
+        <button class="button">FAQ</button>
+    </div>
+
+    <script>
+        let lastScrollTop = 0;
+        window.addEventListener("scroll", function () {
+            let footer = document.querySelector(".footer");
+            let currentScroll = window.scrollY;
+
+            
+            if (currentScroll > 200) {  
+                footer.classList.add("visible");
+            } else {
+                footer.classList.remove("visible");
+            }
+
+            lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; 
+        });
+    </script>
+
+</body>
+</html>
