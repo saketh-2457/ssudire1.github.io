@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <h1>Star Pattern</h1>
+    </head>
+    <body>
+        <label for="rows"></label>
+        <input type="num" id="no of rows" min="0">
+        <div id="demo_div"></div>
+
+        <script>
+            document.getElementById("no of rows").addEventListener("input", function() {
+                let n = parseInt(this.value);
+                let text = "";
+
+                for(let i = 0; i < n; i++){
+                    for(let j = 0; j <= i; j++){
+                        text += "* "
+                     }
+               text += "<br>";
+                }
+
+                document.getElementById("demo_div").innerHTML = text;
+            });
+        </script>
+    </body>
+</html>
