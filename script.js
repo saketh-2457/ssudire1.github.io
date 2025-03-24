@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
         { title: "Project 10", url: "Project/works/calculate sum.html" },
         { title: "Project 11", url: "Project/works/vanish.html" },
         { title: "Project 12", url: "Project/works/agecalculator.html" },
-        { title: "Project 13", url: "works/checkout.html" },
+        { title: "Project 13", url: "Project/works/checkout.html" },
         { title: "Project 14", url: "Project/works/BSF.html" },
         { title: "Project 15", url: "Project/works/student.html" },
         { title: "Project 16", url: "Projectworks/info.html" },
